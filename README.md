@@ -2,14 +2,10 @@
 
 <p>Hot Flix GPT is entertainment based appication using React Js</p>
 
-<hr/>
-
 <h1>Requirement</h1>
 
 1. Authentication Needed Sign Up / Sign In
 2. Mode - Dark / Light
-
-<hr/>
 
 <h1>Features</h1>
 
@@ -23,8 +19,6 @@
 6. TV shows Page
 7. Songs Page
 8. Help Page
-
-<hr/>
 
 <h1>Teach Requirement</h1>
 
