@@ -3,29 +3,34 @@
 <p>Hot Flix GPT is entertainment based appication using React Js</p>
 
 <hr/>
-#Requirement
+
+<h1>Requirement</h1>
 
 1. Authentication Needed Sign Up / Sign In
 2. Mode - Dark / Light
-3. ...
-   #Features
 
-4. Authentication Page
+<hr/>
+
+<h1>Features</h1>
+
+1. Authentication Page
    - Login Form
    - Sign Up Form
-5. Home Page
-6. Profile Page
-7. Search GPT Page
-8. Movies Page
-9. TV shows Page
-10. Songs Page
-11. Help Page
-    ...
-    #Teach Requirement
+2. Home Page
+3. Profile Page
+4. Search GPT Page
+5. Movies Page
+6. TV shows Page
+7. Songs Page
+8. Help Page
 
-12. UI - Tailwindcss
-13. Data Management - Redux
-14. Routing - React Router Dom
-15. Authentication - Firebase
-16. Bundler - Parcel
-17. Deployment - Netlify
+<hr/>
+
+<h1>Teach Requirement</h1>
+
+9. UI - Tailwindcss
+10. Data Management - Redux
+11. Routing - React Router Dom
+12. Authentication - Firebase
+13. Bundler - Parcel
+14. Deployment - Netlify
