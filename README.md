@@ -1,7 +1,8 @@
-#HotFlixGPT
+<h1>HotFlixGPT</h1>
 
-###Hot Flix GPT is entertainment based appication using React Js.
-...
+<p>Hot Flix GPT is entertainment based appication using React Js</p>
+
+<hr/>
 #Requirement
 
 1. Authentication Needed Sign Up / Sign In
