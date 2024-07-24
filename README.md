@@ -22,9 +22,9 @@
 
 <h1>Teach Requirement</h1>
 
-9. UI - Tailwindcss
-10. Data Management - Redux
-11. Routing - React Router Dom
-12. Authentication - Firebase
-13. Bundler - Parcel
-14. Deployment - Netlify
+1. UI - Tailwindcss
+2. Data Management - Redux
+3. Routing - React Router Dom
+4. Authentication - Firebase
+5. Bundler - Parcel
+6. Deployment - Netlify
