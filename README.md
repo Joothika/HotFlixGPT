@@ -9,10 +9,10 @@
 
 <h1>Features</h1>
 
-1. Authentication Page
+1. Home Page
+2. Authentication Page
    - Login Form
    - Sign Up Form
-2. Home Page
 3. Profile Page
 4. Search GPT Page
 5. Movies Page
