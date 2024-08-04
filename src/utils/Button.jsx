@@ -1,6 +1,16 @@
 import React from "react";
 
-const Button = ({ onClick, content, type, color, addCss, children }) => {
+const Button = ({
+  onClick,
+  content,
+  type,
+  color,
+  addCss,
+  children,
+  onhover,
+  onleave,
+  reference,
+}) => {
   const baseButton =
     "text-white px-6 py-2 uppercase tracking-wider font-bold xl:font-semibold text-xs  md:text-sm xl:text-md rounded-sm w-full sm:w-[320px] focus:border-none focus:outline-none flex items-center justify-center";
   const smallClass =
@@ -31,6 +41,24 @@ const Button = ({ onClick, content, type, color, addCss, children }) => {
         {content}
       </button>
     );
+
+  if (type === "menu") {
+    return (
+      <button onMouseEnter={onhover} onMouseLeave={onleave} ref={reference}>
+        {children}
+      </button>
+    );
+  }
+  if ((type = "slide")) {
+    return (
+      <button
+        className={`absolute bottom-[3rem] top-[2rem] z-[11] h-[17rem] bg-gradient-to-l ${addCss} `}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
 
   return null;
 };

@@ -1,0 +1,16 @@
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+nav.slick__arrow {
+  height: 0;
+  overflow: hidden;
+}

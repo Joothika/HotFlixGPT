@@ -1,14 +1,18 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXAHhWIsShJgMWhPiXthAciOUor1F2cf4",
-  authDomain: "sample-be776.firebaseapp.com",
-  projectId: "sample-be776",
-  storageBucket: "sample-be776.appspot.com",
-  messagingSenderId: "135625914355",
-  appId: "1:135625914355:web:32c3e3895a0cafdf31c486",
+  apiKey: "AIzaSyBu2z_nVkWYCxzHJYJinH7egz9eFwuOxrQ",
+  authDomain: "hotflixgpt-2024.firebaseapp.com",
+  projectId: "hotflixgpt-2024",
+  storageBucket: "hotflixgpt-2024.appspot.com",
+  messagingSenderId: "873186679289",
+  appId: "1:873186679289:web:e382976d9b7ea0dad34528",
 };
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+auth.languageCode = "en";
+export const db = getFirestore(app);
+export const provider = new GoogleAuthProvider();

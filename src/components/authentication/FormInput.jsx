@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
-  useToggleSignInForm,
   InputBox,
   useReferenceAndDispatchSignUp,
+  useValidateAuthentication,
 } from "../../utils/ExportComponents";
 import {
   FORM_BUTTON_EMAIL_PLACEHOLDER,
@@ -30,6 +30,8 @@ const FormInput = ({ isSignIn }) => {
   const { email, password, name, phone } = useSelector(
     (state) => state.userReducer,
   );
+  const validation = useValidateAuthentication({ isSignIn });
+
   return (
     <>
       {!isSignIn && (
@@ -41,7 +43,7 @@ const FormInput = ({ isSignIn }) => {
               specify={"transparent"}
               reference={nameRef}
               value={name}
-              onChange={!isSignIn && dispatchSignUpForUserName}
+              onChange={dispatchSignUpForUserName}
             />
           </div>
           <div className="mt-8">
@@ -51,7 +53,7 @@ const FormInput = ({ isSignIn }) => {
               specify={"transparent"}
               reference={emailRef}
               value={email}
-              onChange={!isSignIn && dispatchSignUpForUserEmail}
+              onChange={dispatchSignUpForUserEmail}
             />
           </div>
           <div className="mt-8">
@@ -61,7 +63,7 @@ const FormInput = ({ isSignIn }) => {
               specify={"transparent"}
               reference={phoneRef}
               value={phone}
-              onChange={!isSignIn && dispatchSignUpForUserPhone}
+              onChange={dispatchSignUpForUserPhone}
             />
           </div>
         </>
@@ -73,6 +75,9 @@ const FormInput = ({ isSignIn }) => {
             placeholder={FORM_BUTTON_EMAIL_PLACEHOLDER}
             specify={"transparent"}
             color={"bg-transparent outline-white/30"}
+            value={email}
+            reference={emailRef}
+            onChange={dispatchSignUpForUserEmail}
           />
         </div>
       )}
@@ -83,7 +88,7 @@ const FormInput = ({ isSignIn }) => {
           specify={"transparent"}
           reference={passwordRef}
           value={password}
-          onChange={!isSignIn && dispatchSignUpForUserPassword}
+          onChange={dispatchSignUpForUserPassword}
         />
       </div>
     </>

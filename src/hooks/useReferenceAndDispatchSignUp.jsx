@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getUserName,
   getUserPhoneNumber,
@@ -8,14 +8,15 @@ import {
 } from "../utils/ExportComponents";
 const useReference = () => {
   const dispatch = useDispatch();
-  const emailRef = useRef("abc@gmail.com");
-  const passwordRef = useRef("abc1234");
-  const nameRef = useRef("Abc");
-  const phoneRef = useRef(5835823046);
-  const dispatchSignUpForUserName = function dispatchSignUpForUserName() {
-    console.log("user check in dispatchsignup");
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const nameRef = useRef();
+  const phoneRef = useRef();
+
+  function dispatchSignUpForUserName() {
     return dispatch(getUserName(nameRef.current.value));
-  };
+  }
+
   const dispatchSignUpForUserPhone = function dispatchSignUpForUserPhone() {
     return dispatch(getUserPhoneNumber(phoneRef.current.value));
   };
@@ -26,6 +27,7 @@ const useReference = () => {
     function dispatchSignUpForUserPassword() {
       return dispatch(getUserPassword(passwordRef.current.value));
     };
+
   return [
     nameRef,
     phoneRef,

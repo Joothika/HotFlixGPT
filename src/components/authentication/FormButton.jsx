@@ -1,4 +1,3 @@
-import React from "react";
 import { Google } from "@mui/icons-material";
 import Button from "../../utils/Button";
 import {
@@ -7,11 +6,17 @@ import {
   FORM_BUTTON_SIGNUP,
   FORM_BUTTON_TYPE_LARGE,
 } from "../../utils/constants";
+import {
+  useGoogleSignInWithFirebase,
+  useSignInWithFirebase,
+  useSignUpWithFirebase,
+} from "../../utils/ExportComponents";
 
 const FormButton = ({ isSignIn }) => {
-  async function signUpUser() {
-    console.log("dgrg");
-  }
+  const signUpUser = useSignUpWithFirebase();
+  const signInUser = useSignInWithFirebase();
+  const signInWithGoogle = useGoogleSignInWithFirebase();
+
   return (
     <>
       <Button
@@ -19,7 +24,7 @@ const FormButton = ({ isSignIn }) => {
         type={FORM_BUTTON_TYPE_LARGE}
         color={"bg-red-600 hover:bg-red-500"}
         addCss={"h-12 focus:ring focus:ring-red-500/50"}
-        onClick={isSignIn ? "" : signUpUser}
+        onClick={isSignIn ? signInUser : signUpUser}
       />
 
       {isSignIn && (
@@ -30,6 +35,7 @@ const FormButton = ({ isSignIn }) => {
             type={FORM_BUTTON_TYPE_LARGE}
             color={"bg-red-100/40 hover:bg-black/40"}
             addCss={"hover:text-red-600 relative p-auto h-12"}
+            onClick={signInWithGoogle}
           >
             <Google className="mr-2" />
           </Button>
