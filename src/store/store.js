@@ -6,6 +6,7 @@ import movieSlice from "./movieSlice";
 import TvShowSlice from "./TvShowSlice";
 import actorSlice from "./actorSlice";
 import detailsDisplaySlice from "./detailsDisplaySlice";
+import searchSlice from "./searchSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     TvShowReducer: TvShowSlice,
     actorReducer: actorSlice,
     detailsReducer: detailsDisplaySlice,
+    searchReducer: searchSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

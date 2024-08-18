@@ -13,6 +13,10 @@ import {
   AuthenticationPage,
   DashboardPage,
   DetailsPage,
+  OverviewContainer,
+  TrailerContainer,
+  RecommendationContainer,
+  ReviewContainer,
 } from "./utils/ExportComponents";
 import LoginNavigation, {
   HomePageNavigation,
@@ -58,8 +62,30 @@ function App() {
       ),
       children: [
         {
-          path: "/dashboard/details/:id",
+          path: "/dashboard/:name/:id",
           element: <DetailsPage />,
+          children: [
+            {
+              path: "/dashboard/:name/:id",
+              element: <OverviewContainer />,
+            },
+            {
+              path: "/dashboard/:name/:id/overview",
+              element: <OverviewContainer />,
+            },
+            {
+              path: "/dashboard/:name/:id/reviews",
+              element: <ReviewContainer />,
+            },
+            {
+              path: "/dashboard/:name/:id/trailer",
+              element: <TrailerContainer />,
+            },
+            {
+              path: "/dashboard/:name/:id/recommendations",
+              element: <RecommendationContainer />,
+            },
+          ],
         },
         {
           path: "/dashboard",
@@ -70,7 +96,7 @@ function App() {
           ),
         },
         {
-          path: "/dashboard/search",
+          path: "/dashboard/:search",
           element: (
             <SearchPageNavigation>
               <SearchPage />

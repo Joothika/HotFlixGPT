@@ -1,44 +1,71 @@
-import {
-  HomePageContainer,
-  ReactPlayerTrailer,
-  TrailerContent,
-  useFetchMoviesOrTvDashboardShow,
-} from "../../utils/ExportComponents";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { usetFetchTrailer } from "../../services/useFetchDashboardShow";
-import { TMDB_IMG_URL } from "../../utils/constants";
+import Slider from "react-slick";
+import {
+  settingsForDashboard,
+  settingsForDashboardTrailer,
+} from "../../utils/constants";
+import {
+  DashboardPosterContentContainer,
+  ReactPlayerTrailer,
+  TrailerSidebar,
+  useFetchTrending,
+  usetFetchTrailer,
+} from "../../utils/ExportComponents";
 
 const HeaderTrailer = () => {
-  useFetchMoviesOrTvDashboardShow("/movie/now_playing");
-  usetFetchTrailer("/movie/now_playing");
-  const { nowplayingMovies, nowplayingTrailer } = useSelector(
-    (state) => state.dashboardReducer,
-  );
+  const sliderRef = useRef(null);
+  useFetchTrending("/trending/movie");
+  useFetchTrending("/trending/tv");
+  const {
+    trendingMoviesTrailer,
+    trendingShowsTrailer,
+    trendingMovies,
+    trendingShows,
+  } = useSelector((state) => state.dashboardReducer);
+  usetFetchTrailer("/movie", trendingMovies, "trendingMovies");
+  usetFetchTrailer("/tv", trendingShows, "trendingShows");
+
+  const trendMoviesPoster = trendingMovies
+    ?.slice(0, 3)
+    .map((eachmovie) => eachmovie);
+  const trendShowsPoster = trendingShows
+    ?.slice(0, 3)
+    .map((eachshow) => eachshow);
+  const combineTrendsPoster = [...trendMoviesPoster, ...trendShowsPoster];
+  const trendMovieFiler = trendingMoviesTrailer
+    ?.slice(0, 3)
+    .map((eachmovie) => eachmovie);
+  const trendShowsFiler = trendingShowsTrailer
+    ?.slice(0, 3)
+    .map((eachshow) => eachshow);
+  const combinedTrends = [...trendMovieFiler, ...trendShowsFiler];
+
   return (
     <>
-      <section className="hidden overflow-y-hidden before:absolute before:top-0 before:z-[1] before:w-full before:overflow-x-hidden before:bg-gradient-to-bl before:from-white/20 before:to-black md:block before:lg:h-[130vh]">
-        {nowplayingTrailer?.slice(0, 1).map((trailer, i) => (
-          <ReactPlayerTrailer key={"768"} trailer={trailer?.key} />
-        ))}
-        {/* { {nowplayingMovies?.slice(0, 1).map((movie, i) => (
-      <TrailerContent key={movie.id} movie={movie} />
-    ))} */}
+      <section className="relative hidden overflow-y-hidden sm:block">
+        <TrailerSidebar
+          combinedPoster={combineTrendsPoster}
+          sliderRef={sliderRef}
+        />
+        <Slider {...settingsForDashboardTrailer} ref={sliderRef}>
+          {combinedTrends?.map((trailer, i) => (
+            <ReactPlayerTrailer trailer={trailer?.key} key={i} />
+          ))}
+        </Slider>
       </section>
-      <section className="block before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:h-[60vh] before:bg-gradient-to-b before:from-white/5 before:from-5% before:to-black/50 before:to-95% before:sm:h-[50vh] md:hidden">
-        {nowplayingMovies?.slice(0, 1).map((eachmovie) => {
+      <Slider {...settingsForDashboard}>
+        {combineTrendsPoster?.map((eachItem) => {
           return (
-            <img
-              src={`${TMDB_IMG_URL}${eachmovie.backdrop_path}`}
-              className="h-[60vh] w-screen object-cover sm:h-[50vh]"
-              key={eachmovie.id}
+            <DashboardPosterContentContainer
+              key={eachItem.id}
+              eachItem={eachItem}
             />
           );
         })}
-      </section>
+      </Slider>
     </>
   );
 };
 
 export { HeaderTrailer };
-
-//  className="before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:h-[800px] before:bg-gradient-to-l before:from-white/20 before:from-5% before:to-black/90 before:to-95%"

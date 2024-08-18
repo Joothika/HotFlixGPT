@@ -9,12 +9,12 @@ import { useSelector } from "react-redux";
 
 const TrendingAllContainer = () => {
   const [showButton, setShowButton] = useState(false);
-  const { trendingAll } = useSelector((state) => state.dashboardReducer);
+  const { trendAll } = useSelector((state) => state.dashboardReducer);
   useFetchTrending("/trending/all");
   return (
     <>
       <section
-        className={`2xl:mt[-5rem] hover: relative border-white text-white lg:sticky lg:z-10 lg:ml-[7.5rem] lg:mt-[-1rem] xl:sticky xl:z-10 xl:mt-[-5rem] 2xl:sticky 2xl:mt-[-10rem]`}
+        className={`2xl:mt[-5rem] hover: relative border-white text-white sm:sticky sm:z-10 sm:mt-[-1rem] xl:sticky xl:z-10 xl:mt-[-8rem] 2xl:sticky 2xl:mt-[-10rem]`}
         onMouseEnter={() => {
           setShowButton(true);
         }}
@@ -25,7 +25,7 @@ const TrendingAllContainer = () => {
         }}
       >
         <EachHeaderContainer name={TRENDING_ALL_HEADER} />
-        <EachContainer category={trendingAll} showButton={showButton} />
+        <EachContainer category={trendAll} showButton={showButton} />
       </section>
     </>
   );

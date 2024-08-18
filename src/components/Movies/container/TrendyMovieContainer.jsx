@@ -9,11 +9,11 @@ import {
 } from "../../../utils/ExportComponents";
 const TrendyMovieContainer = () => {
   const [showButton, setShowButton] = useState(false);
-  const { trendingMovies } = useSelector((state) => state.movieReducer);
+  const { trendingMovies } = useSelector((state) => state.dashboardReducer);
   useFetchTrending("/trending/movie");
   return (
     <section
-      className="text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white lg:sticky lg:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}

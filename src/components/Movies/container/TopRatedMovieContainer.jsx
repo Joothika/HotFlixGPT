@@ -15,7 +15,7 @@ const TopRatedMovieContainer = () => {
   useFetchMoviesOrTvDashboardShow("/movie/top_rated");
   return (
     <section
-      className="text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white lg:sticky lg:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}
@@ -26,7 +26,7 @@ const TopRatedMovieContainer = () => {
       }}
     >
       <EachHeaderContainer name={TOP_RATED_HEADER} />
-      <EachContainer category={topratedMovies} showButton={showButton} />
+      <EachContainer category={topratedMovies} showButton={showButton}  />
     </section>
   );
 };

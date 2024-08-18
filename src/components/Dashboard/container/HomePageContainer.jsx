@@ -11,7 +11,6 @@ import {
   useFetchTrending,
 } from "../../../utils/ExportComponents";
 import * as styles from "./style.module.css";
-import { PopularGenreContainer } from "./PopularGenreContainer";
 
 const HomePageContainer = () => {
   useFetchActors("/person/popular");
@@ -22,7 +21,6 @@ const HomePageContainer = () => {
       <TrendingAllContainer />
       <ComingSoonContainer />
       <TopRatedContainer />
-      <PopularGenreContainer />
       <GenreMovieContainer />
       <PopularActorContainer />
       <GenreTvContainer />

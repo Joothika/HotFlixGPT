@@ -4,9 +4,11 @@ const dashboardSlice = createSlice({
   name: "dashboard",
   initialState: {
     hoverMenu: false,
-    nowplayingMovies: [],
-    nowplayingTrailer: [],
-    trendingAll: [],
+    trendAll: [],
+    trendingMovies: [],
+    trendingShows: [],
+    trendingMoviesTrailer: [],
+    trendingShowsTrailer: [],
     trendingAllTrailer: [],
     genreMovieList: [],
     genreTvList: [],
@@ -17,14 +19,20 @@ const dashboardSlice = createSlice({
     onhoverMenu(state, actions) {
       state.hoverMenu = actions.payload;
     },
-    onShowNowPlayingMovies(state, actions) {
-      state.nowplayingMovies = actions.payload;
-    },
-    onShowNowPlayingTrailer(state, actions) {
-      state.nowplayingTrailer = actions.payload;
-    },
     onTrendingAll(state, actions) {
-      state.trendingAll = actions.payload;
+      state.trendAll = actions.payload;
+    },
+    onShowTrendingMovies(state, actions) {
+      state.trendingMovies = actions.payload;
+    },
+    onShowTrendingShows(state, actions) {
+      state.trendingShows = actions.payload;
+    },
+    onShowTrendingMoviesTrailer(state, actions) {
+      state.trendingMoviesTrailer = actions.payload;
+    },
+    onShowTrendingShowsTrailer(state, actions) {
+      state.trendingShowsTrailer = actions.payload;
     },
     onShowTrendingAllTrailer(state, actions) {
       state.trendingAllTrailer = actions.payload;
@@ -46,11 +54,12 @@ const dashboardSlice = createSlice({
 
 export const {
   onhoverMenu,
-  onShowNowPlayingMovies,
-  onDispayTrailer,
-  onShowNowPlayingTrailer,
   onTrendingAll,
+  onShowTrendingMoviesTrailer,
+  onShowTrendingShowsTrailer,
   onShowTrendingAllTrailer,
+  onShowTrendingMovies,
+  onShowTrendingShows,
   onGetGenreMovieList,
   onGetGenreTvList,
   onShowGenreMovies,

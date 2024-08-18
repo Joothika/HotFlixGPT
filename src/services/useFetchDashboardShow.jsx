@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   onGetGenreMovieList,
   onGetGenreTvList,
@@ -9,6 +9,9 @@ import {
   onTrendingAll,
   onShowTrendingMovies,
   onShowTrendingShows,
+  onShowTrendingMoviesTrailer,
+  onShowTrendingShowsTrailer,
+  onShowAiringTodayTrailer,
 } from "../utils/ExportComponents";
 import { TMDB_API_KEY, TMDB_URL } from "../utils/constants";
 
@@ -42,23 +45,16 @@ export const useFetchTrending = (endpoint) => {
   }, []);
 };
 
-export const usetFetchTrailer = (endpoint) => {
+export const usetFetchTrailer = (videoEndpoint, data, type) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchTrailer() {
       try {
-        const res = await fetch(
-          `${TMDB_URL}${endpoint}?api_key=${TMDB_API_KEY}`,
-        );
-
-        const data = await res.json();
-        const movie = data.results;
-
         const movieTrailers = await Promise?.all(
-          movie?.map(async (movie) => {
+          data?.map(async (item) => {
             const trailerData = await fetch(
-              `${TMDB_URL}/movie/${movie.id}/videos?api_key=${TMDB_API_KEY}`,
+              `${TMDB_URL}${videoEndpoint}/${item.id}/videos?api_key=${TMDB_API_KEY}`,
             );
             const data = await trailerData.json();
             // console.log(data, "trailer");
@@ -66,16 +62,25 @@ export const usetFetchTrailer = (endpoint) => {
           }),
         );
         const trailerKeys = movieTrailers;
-        if (endpoint === "/movie/now_playing")
+        if (videoEndpoint === "/movie" && type === "trendingMovies")
+          return dispatch(onShowTrendingMoviesTrailer(trailerKeys));
+        if (videoEndpoint === "/movie" && type === "nowplayingMovies")
           return dispatch(onShowNowPlayingTrailer(trailerKeys));
-        if (endpoint === "trending")
-          return dispatch(onShowTrendingAllTrailer(trailerKeys));
+        if (videoEndpoint === "/tv" && type === "trendingMoviesShows")
+          return dispatch(onShowTrendingShowsTrailer(trailerKeys));
+        if (videoEndpoint === "/tv" && type === "airingTodayShows")
+          return dispatch(onShowAiringTodayTrailer(trailerKeys));
+
+        // if (endpoint === "/movie/now_playing")
+        //   return dispatch(onShowNowPlayingTrailer(trailerKeys));
+        // if (endpoint === "/trending/movie/day")
+        //   return dispatch(onShowTrendingAllTrailer(trailerKeys));
       } catch (err) {
         console.log(err);
       }
     }
     fetchTrailer();
-  }, []);
+  }, [data]);
 };
 
 export const useFetchConfiguration = (endpoint) => {

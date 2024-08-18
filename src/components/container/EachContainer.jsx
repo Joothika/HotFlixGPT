@@ -5,7 +5,6 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Button from "../../utils/Button";
 import { EachItemContainer } from "../../utils/ExportComponents";
-import { createReducer } from "@reduxjs/toolkit";
 import { settings } from "../../utils/constants";
 
 const EachContainer = ({ category, showButton }) => {
@@ -16,7 +15,7 @@ const EachContainer = ({ category, showButton }) => {
         <>
           <Button
             type={"slide"}
-            addCss={`bg-gradient-to-l from-white/0 to-black`}
+            addCss={`lg:bg-gradient-to-l lg:from-white/0 lg:to-black lg:left-[7rem]`}
             onClick={() => sliderRef.current.slickPrev()}
           >
             <KeyboardArrowLeftIcon
@@ -26,7 +25,7 @@ const EachContainer = ({ category, showButton }) => {
           </Button>
           <Button
             type={"slide"}
-            addCss={`bg-gradient-to-r from-white/0 from-10% to-black to-90% right-0 transition-all delay-150 duration-500 ease-in `}
+            addCss={`lg:bg-gradient-to-r lg:from-white/0 lg:from-10% lg:to-black lg:to-90% lg:right-0 transition-all delay-150 duration-500 ease-in `}
             onClick={() => sliderRef.current.slickNext()}
           >
             <KeyboardArrowRightIcon
@@ -40,7 +39,7 @@ const EachContainer = ({ category, showButton }) => {
       <Slider
         {...settings}
         ref={sliderRef}
-        className={`relative mx-2 mb-8 scroll-smooth sm:mb-12`}
+        className={`relative mx-2 mb-8 scroll-smooth sm:mb-10 sm:ml-[7rem]`}
       >
         {category?.map((eachItem, i) => (
           <EachItemContainer key={eachItem.id} item={eachItem} />

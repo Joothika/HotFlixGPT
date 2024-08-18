@@ -46,6 +46,11 @@ export const POPULAR_SHOW_HEADER = "Popular Shows";
 export const TOP_RATED_SHOW_HEADER = "Top Rated Shows";
 export const TRENDING_SHOW_HEADER = "Trendy Shows";
 
+export const RELATED_WORDS = "Related Words :";
+export const KNOWN_LANGUAGES = "Known Languages :";
+
+export const WATCH_MORE_BUTTON = "Watch More";
+
 export const BG_IMG_URL = "https://wallpaperaccess.com/full/6075860.jpg";
 export const TMDB_IMG_URL = "https://image.tmdb.org/t/p/w500";
 export const TMDB_TEMPIMG_URL =
@@ -117,35 +122,16 @@ export let settings = {
   slidesToScroll: 1,
   speed: 600,
   centerMode: true,
+  centerPadding: "50px",
   responsive: [
-    {
-      breakpoint: 350,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "10px",
-      },
-    },
     {
       breakpoint: 360,
       settings: {
         arrows: false,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "50px",
-      },
-    },
-    {
-      breakpoint: 370,
-      settings: {
-        arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: 0,
+        centerPadding: "0",
       },
     },
     {
@@ -154,18 +140,8 @@ export let settings = {
         arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "1px",
-      },
-    },
-    {
-      breakpoint: 430,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "20px",
+        centerMode: false,
+        centerPadding: "0",
       },
     },
     {
@@ -175,27 +151,7 @@ export let settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "35px",
-      },
-    },
-    {
-      breakpoint: 470,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "45px",
-      },
-    },
-    {
-      breakpoint: 490,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "50px",
+        centerPadding: "0",
       },
     },
     {
@@ -204,305 +160,117 @@ export let settings = {
         arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "70px",
-      },
-    },
-    {
-      breakpoint: 510,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "65px",
-      },
-    },
-    {
-      breakpoint: 520,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "70px",
-      },
-    },
-    {
-      breakpoint: 530,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "75px",
-      },
-    },
-    {
-      breakpoint: 540,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "80px",
-      },
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "85px",
-      },
-    },
-    {
-      breakpoint: 560,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "90px",
-      },
-    },
-    {
-      breakpoint: 570,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "95px",
-      },
-    },
-    {
-      breakpoint: 580,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "100px",
-      },
-    },
-    {
-      breakpoint: 590,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "105px",
+        centerMode: false,
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 600,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "110px",
-      },
-    },
-    {
-      breakpoint: 620,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "120px",
-      },
-    },
-    {
-      breakpoint: 630,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "130px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 640,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "140px",
+        centerPadding: "0",
       },
     },
-    {
-      breakpoint: 680,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "50px",
-      },
-    },
-    {
-      breakpoint: 700,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "70px",
-      },
-    },
-    {
-      breakpoint: 720,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "75px",
-      },
-    },
-    {
-      breakpoint: 740,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "80px",
-      },
-    },
-    {
-      breakpoint: 760,
-      settings: {
-        arrows: false,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "50px",
-      },
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "75px",
-      },
-    },
-    {
-      breakpoint: 830,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "85px",
-      },
-    },
+
     {
       breakpoint: 840,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "95px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 850,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "105px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 870,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "115px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 890,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "120px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 920,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "130px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 940,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 6,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "140px",
+        centerPadding: "0",
       },
     },
-    {
-      breakpoint: 960,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "150px",
-      },
-    },
+
     {
       breakpoint: 980,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "160px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 1024,
       settings: {
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "170px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 1050,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: 0,
@@ -512,7 +280,7 @@ export let settings = {
       breakpoint: 1100,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: 0,
@@ -522,83 +290,136 @@ export let settings = {
       breakpoint: 1150,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "30px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 1200,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "45px",
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 1250,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "75px",
+        centerPadding: "0",
+      },
+    },
+    {
+      breakpoint: 1260,
+      settings: {
+        arrows: false,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0",
+      },
+    },
+    {
+      breakpoint: 1270,
+      settings: {
+        arrows: false,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "1px",
       },
     },
     {
       breakpoint: 1300,
       settings: {
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "50px",
+        centerPadding: "3px",
+      },
+    },
+    {
+      breakpoint: 1350,
+      settings: {
+        arrows: false,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "10px",
       },
     },
     {
       breakpoint: 1400,
       settings: {
         arrows: false,
-        slidesToShow: 6,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "10px",
+        centerPadding: "45px",
       },
     },
     {
       breakpoint: 1450,
       settings: {
         arrows: false,
-        slidesToShow: 6,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "10px",
+        centerPadding: "55px",
       },
     },
     {
       breakpoint: 1500,
       settings: {
         arrows: false,
-        slidesToShow: 6,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "10px",
+        centerPadding: "30px",
       },
     },
     {
       breakpoint: 1600,
       settings: {
         arrows: false,
-        slidesToShow: 6,
+        slidesToShow: 7,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "50px",
+        centerPadding: "110px",
       },
     },
   ],
+};
+
+export let settingsSearch = {};
+
+export const settingsForDashboard = {
+  infinite: true,
+  dots: false,
+  arrows: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  cssEase: "linear",
+};
+
+export const settingsForDashboardTrailer = {
+  infinite: false,
+  arrows: false,
+  dots: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
 };
 
 export const TMDB_URL = "https://api.themoviedb.org/3";

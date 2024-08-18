@@ -9,12 +9,12 @@ import { FAMOUS_ACTOR_HEADER } from "../../../utils/constants";
 
 const PopularActorContainer = () => {
   const [showButton, setShowButton] = useState(false);
-
   const { popularActors } = useSelector((state) => state.actorReducer);
   useFetchActors("/person/popular");
+  console.log(popularActors);
   return (
     <section
-      className="text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white sm:sticky sm:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}

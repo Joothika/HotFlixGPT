@@ -16,7 +16,7 @@ const GenreMovieContainer = () => {
   useFetchGenre("movie");
   useFetchDiscover("/discover/movie", genreMovieList);
   return (
-    <section className="text-white lg:sticky lg:z-10 lg:ml-[7rem]">
+    <section className="text-white sm:sticky sm:z-10 ">
       {genreMovieCategories?.map((eachGenreCatgory, i) => {
         return (
           <div

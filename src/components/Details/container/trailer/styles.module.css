@@ -1,0 +1,22 @@
+.eachTrailer {
+  max-width: 6rem;
+  max-height: 4rem;
+  border-radius: 0.1rem;
+  box-shadow: 0.01rem 0.01rem 0.3rem 0.01rem white;
+  aspect-video: 16/9;
+  @media (min-width: 640px) {
+    max-width: 8rem;
+    max-height: 6rem;
+    aspect-video: 16/9;
+  }
+  @media (min-width: 1024px) {
+    max-width: 12rem;
+    max-height: 8rem;
+    aspect-video: 16/9;
+  }
+  @media (min-width: 1280px) {
+    max-width: 14rem;
+    max-height: 9rem;
+    aspect-video: 16/9;
+  }
+}

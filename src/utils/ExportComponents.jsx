@@ -23,8 +23,6 @@ export { TopRatedContainer } from "../components/Dashboard/container/TopRatedCon
 export { PopularActorContainer } from "../components/Dashboard/container/PopularActorContainer";
 export { MobileHomeLastContainer } from "../components/Dashboard/container/MobileHomeLastContainer";
 
-// export { PopularGenreContainer } from "../components/Dashboard/container/PopularGenreContainer";
-
 /****** MOVIE DASHBOARD SHOW ******/
 export { default as MovieDashboardTrailer } from "../components/Movies/Trailer/MovieDashboardTrailer";
 export { default as MoviePageContainer } from "../components/Movies/container/MoviePageContainer";
@@ -43,16 +41,42 @@ export { PopularTvContainer } from "../components/TvShows/container/PopularTvCon
 export { TopRatedTvContainer } from "../components/TvShows/container/TopRatedTvContainer";
 export { TrendingTvContainer } from "../components/TvShows/container/TrendingTvContainer";
 
+/****** SEARCH CONTAINER ******/
+
+export { SearchContainer } from "../components/Search/SearchContainer";
+export { SearchBar } from "../components/Search/SearchBar";
+export { SearchAnimation } from "../components/Search/SearchAnimation";
+export { SearchResults } from "../components/Search/SearchResults";
+
 /****** DETAILS CONTAINER ******/
 export { default as DetailsTrailer } from "../components/Details/Trailer/DetailsTrailer";
 export { Trailer } from "../components/Details/Trailer/Trailer";
+export { InsteadOfTrailerPoster } from "../components/Details/Trailer/InsteadOfTrailerPoster";
 export { Poster } from "../components/Details/Trailer/Poster";
 export { TrailerOrPosterContent } from "../components/Details/Trailer/TrailerOrPosterContent";
 export { TrailerLogo } from "../components/Details/Trailer/TrailerLogo";
 export { TrailerTitle } from "../components/Details/Trailer/TrailerTitle";
 export { TrailerTags } from "../components/Details/Trailer/TrailerTags";
 export { TrailerOverview } from "../components/Details/Trailer/TrailerOverview";
-export { LearnMore } from "../components/Details/Trailer/LearnMore";
+export { WatchMore } from "../components/Details/Trailer/WatchMore";
+export { DetailsContainer } from "../components/Details/container/DetailsContainer";
+export { DetailMenuBar } from "../components/Details/container/DetailMenuBar";
+export { OverviewContainer } from "../components/Details/container/overview/OverviewContainer";
+export { OverviewHeader } from "../components/Details/container/overview/OverviewHeader";
+export { OverviewGenres } from "../components/Details/container/overview/OverviewGenres";
+export { RatingAndOverview } from "../components/Details/container/overview/RatingAndOverview";
+export { OverviewKeywords } from "../components/Details/container/overview/OverviewKeywords";
+export { OverviewLinkFooter } from "../components/Details/container/overview/OverviewLinkFooter";
+export { TrailerContainer } from "../components/Details/container/trailer/TrailerContainer";
+export { TrailerVideo } from "../components/Details/container/trailer/TrailerVideo";
+export { TrailerVideoContent } from "../components/Details/container/trailer/TrailerVideoContent";
+export { RecommendationContainer } from "../components/Details/container/recommendation/RecommendationContainer";
+export { NoOverviewDisplay } from "../components/Details/container/NoOverviewDisplay";
+export { ReviewContainer } from "../components/Details/container/review/ReviewContainer";
+export { AuthorAvatarProfile } from "../components/Details/container/review/AuthorAvatarProfile";
+export { AuthorDetails } from "../components/Details/container/review/AuthorDetails";
+export { AuthorContent } from "../components/Details/container/review/AuthorContent";
+export { EachAuthorHeaderBox } from "../components/Details/container/review/EachAuthorHeaderBox";
 
 /******* COMMON CONTAINER ******/
 export { default as ReactPlayerTrailer } from "../components/Trailer/ReactPlayerTrailer";
@@ -60,6 +84,8 @@ export { default as TrailerContent } from "../components/Trailer/TrailerContent"
 export { EachContainer } from "../components/container/EachContainer";
 export { EachHeaderContainer } from "../components/container/EachHeaderContainer";
 export { EachItemContainer } from "../components/container/EachItemContainer";
+export { DashboardPosterContentContainer } from "../components/container/DashboardPosterContentContainer";
+export { TrailerSidebar } from "../components/container/TrailerSidebar";
 
 export { notifySignIn } from "../components/authentication/Error";
 export { notifySignUp } from "../components/authentication/Error";
@@ -104,6 +130,11 @@ export { useFetchGenre } from "../services/useFetchDashboardShow";
 export { useFetchMovieOrTvInfo } from "../services/useFetchMoviesOrTvShows";
 export { useFetchMoviesOrTvDashboardShow } from "../services/useFetchMoviesOrTvShows";
 export { useFetchActors } from "../services/useFetchActors";
+export { useFetchActorsShow } from "../services/useFetchActors";
+export { useFetchMovieSearch } from "../services/useFetchSearch";
+export { useFetchTvSearch } from "../services/useFetchSearch";
+export { useFetchPersonSearch } from "../services/useFetchSearch";
+export { useFetchToken } from "../services/useFetchSubscription";
 
 /****** ALL REDUX STORE *****/
 export { getUserEmail } from "../store/userSlice";
@@ -115,30 +146,48 @@ export { setErrorSignUp } from "../store/userSlice";
 export { UserActiveStatus } from "../store/userSlice";
 
 export { onhoverMenu } from "../store/dashboardSlice";
-export { onShowNowPlayingMovies } from "../store/dashboardSlice";
-export { onShowNowPlayingTrailer } from "../store/dashboardSlice";
-export { onDispayTrailer } from "../store/dashboardSlice";
 export { onTrendingAll } from "../store/dashboardSlice";
 export { onShowTrendingAllTrailer } from "../store/dashboardSlice";
 export { onGetGenreMovieList } from "../store/dashboardSlice";
 export { onGetGenreTvList } from "../store/dashboardSlice";
 export { onShowGenreMovies } from "../store/dashboardSlice";
 export { onShowGenreTv } from "../store/dashboardSlice";
+export { onShowTrendingShows } from "../store/dashboardSlice";
+export { onShowTrendingMovies } from "../store/dashboardSlice";
+export { onShowTrendingMoviesTrailer } from "../store/dashboardSlice";
+export { onShowTrendingShowsTrailer } from "../store/dashboardSlice";
 
 export { onShowUpcomingMovies } from "../store/movieSlice";
 export { onShowPopularMovies } from "../store/movieSlice";
 export { onShowTopRatedMovies } from "../store/movieSlice";
-export { onShowTrendingMovies } from "../store/movieSlice";
+export { onShowNowPlayingMovies } from "../store/movieSlice";
+export { onShowNowPlayingTrailer } from "../store/movieSlice";
 
 export { onShowTopRatedShows } from "../store/TvShowSlice";
 export { onShowAiringTodayShows } from "../store/TvShowSlice";
+export { onShowAiringTodayTrailer } from "../store/TvShowSlice";
 export { onShowOnTheAirShows } from "../store/TvShowSlice";
 export { onShowPopularShows } from "../store/TvShowSlice";
-export { onShowTrendingShows } from "../store/TvShowSlice";
 export { onShowUpcomingShows } from "../store/TvShowSlice";
 
 export { onShowPopularActors } from "../store/actorSlice";
 
 export { onDisplayTrailer } from "../store/detailsDisplaySlice";
 export { onDisplayPoster } from "../store/detailsDisplaySlice";
-export { onDisplayTrailerOrPosterContent } from "../store/detailsDisplaySlice";
+export { onDisplayTrailerOrPosterMovieContent } from "../store/detailsDisplaySlice";
+export { onDisplayTrailerOrPosterTvContent } from "../store/detailsDisplaySlice";
+export { onDisplayActorContent } from "../store/detailsDisplaySlice";
+export { onDisplayIMDBContent } from "../store/detailsDisplaySlice";
+export { onDisplayKeywords } from "../store/detailsDisplaySlice";
+export { onDisplayGenres } from "../store/detailsDisplaySlice";
+export { onDisplayKnownNames } from "../store/detailsDisplaySlice";
+export { onDisplayRecommendations } from "../store/detailsDisplaySlice";
+export { onDisplayCast } from "../store/detailsDisplaySlice";
+export { onDisplayCrew } from "../store/detailsDisplaySlice";
+export { onDisplaySeasons } from "../store/detailsDisplaySlice";
+export { onDisplayProducionCompanies } from "../store/detailsDisplaySlice";
+export { onDisplayReviews } from "../store/detailsDisplaySlice";
+
+export { onShowMovieSearchResults } from "../store/searchSlice";
+export { onShowTvSearchResults } from "../store/searchSlice";
+export { onShowPersonSearchResults } from "../store/searchSlice";

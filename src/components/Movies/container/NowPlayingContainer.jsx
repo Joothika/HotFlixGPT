@@ -8,10 +8,10 @@ import { NOWPLAYING_MOVIE_HEADER } from "../../../utils/constants";
 
 const NowPlayingContainer = () => {
   const [showButton, setShowButton] = useState(false);
-  const { nowplayingMovies } = useSelector((state) => state.dashboardReducer);
+  const { nowplayingMovies } = useSelector((state) => state.movieReducer);
   return (
     <section
-      className={`2xl:mt[-5rem] hover: relative border-white text-white lg:sticky lg:z-10 lg:ml-[7.5rem] lg:mt-[-1rem] xl:sticky xl:z-10 xl:mt-[-5rem] 2xl:sticky 2xl:mt-[-10rem]`}
+      className={`2xl:mt[-5rem] hover: relative border-white text-white lg:sticky lg:z-10 lg:mt-[-1rem] xl:sticky xl:z-10 xl:mt-[-5rem] 2xl:sticky 2xl:mt-[-10rem]`}
       onMouseEnter={() => {
         setShowButton(true);
       }}

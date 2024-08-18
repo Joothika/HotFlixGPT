@@ -14,7 +14,7 @@ const ComingSoonContainer = () => {
   const { upcomingMovies } = useSelector((state) => state.movieReducer);
   return (
     <section
-      className="text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white sm:sticky sm:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}

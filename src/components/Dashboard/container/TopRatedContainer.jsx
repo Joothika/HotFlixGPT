@@ -14,7 +14,7 @@ const TopRatedContainer = () => {
   useFetchMoviesOrTvDashboardShow("/tv/top_rated");
   return (
     <section
-      className=" text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white sm:sticky sm:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}

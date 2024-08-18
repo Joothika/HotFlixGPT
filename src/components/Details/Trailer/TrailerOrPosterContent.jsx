@@ -5,17 +5,17 @@ import {
   TrailerTitle,
   TrailerTags,
   TrailerOverview,
-  LearnMore,
+  WatchMore,
 } from "../../../utils/ExportComponents";
 
 const TrailerOrPosterContent = () => {
   return (
-    <section className="xl:top-30 lg::w-[35%] absolute z-[3] sm:left-8 sm:top-24 md:left-[3rem] md:top-24 md:w-[40%] lg:left-[7.5rem] lg:top-24">
+    <section className="absolute bottom-12 left-[20%] right-[20%] z-[4] flex flex-col items-center sm:bottom-10 sm:left-[7rem] sm:w-[40%] sm:items-start md:bottom-20 lg:bottom-10 lg:left-[7.5rem] lg:w-[35%] xl:bottom-28">
       <TrailerLogo />
       <TrailerTitle />
       <TrailerTags />
       <TrailerOverview />
-      <LearnMore />
+      <WatchMore />
     </section>
   );
 };

@@ -10,11 +10,11 @@ import {
 
 const TrendingTvContainer = () => {
   const [showButton, setShowButton] = useState(false);
-  const { trendingShows } = useSelector((state) => state.TvShowReducer);
+  const { trendingShows } = useSelector((state) => state.dashboardReducer);
   useFetchTrending("/trending/tv");
   return (
     <section
-      className="text-white lg:sticky lg:z-10 lg:ml-[7rem]"
+      className="text-white lg:sticky lg:z-10"
       onMouseEnter={() => {
         setShowButton(true);
       }}
