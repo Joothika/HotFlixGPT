@@ -21,7 +21,7 @@ const MenuIcon = ({ children, icontext }) => {
     >
       {
         <div
-          className={`${hoverMenu ? "text-white/80 transition-transform delay-100 lg:scale-[1.3]" : "delay-400 transition-transform duration-500"} relative rounded-sm text-white/70`}
+          className={`${hoverMenu ? "text-white/80 transition-transform delay-100 lg:scale-[1.1]" : "delay-400 transition-transform duration-500"} relative rounded-sm text-white/70`}
         >
           {children}
           {/* <span

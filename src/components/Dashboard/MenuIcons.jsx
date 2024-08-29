@@ -14,9 +14,10 @@ import TvIcon from "@mui/icons-material/Tv";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import { MenuIcon } from "../../utils/ExportComponents";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const MenuIcons = () => {
+  const { profile } = useParams();
   return (
     <>
       <NavLink to={"/dashboard"} className="text-white/70">
@@ -29,9 +30,9 @@ const MenuIcons = () => {
           <ManageSearchIcon fontSize="medium" />
         </MenuIcon>
       </NavLink>
-      <MenuIcon icontext={MENU_TEXT_VOICE}>
+      {/* <MenuIcon icontext={MENU_TEXT_VOICE}>
         <KeyboardVoiceIcon fontSize="medium" />
-      </MenuIcon>
+      </MenuIcon> */}
       <NavLink to={"/dashboard/movies"} className="text-white/70">
         <MenuIcon icontext={MENU_TEXT_MOVIES}>
           <TheatersIcon fontSize="small" />

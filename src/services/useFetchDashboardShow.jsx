@@ -118,7 +118,7 @@ export const useFetchGenre = (endpoint) => {
       }
     }
     fetchGenre();
-  }, []);
+  }, [endpoint]);
 };
 
 export const useFetchDiscover = (endpoint, genre) => {

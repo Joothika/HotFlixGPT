@@ -22,7 +22,7 @@ const HomePageContainer = () => {
       <ComingSoonContainer />
       <TopRatedContainer />
       <GenreMovieContainer />
-      <PopularActorContainer />
+      {/* <PopularActorContainer /> */}
       <GenreTvContainer />
       <MobileHomeLastContainer />
     </div>

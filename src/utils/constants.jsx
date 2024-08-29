@@ -51,6 +51,7 @@ export const KNOWN_LANGUAGES = "Known Languages :";
 
 export const WATCH_MORE_BUTTON = "Watch More";
 
+export const PROFILE_DUMMY_IMG = `https://walnuteducation.com/static/core/images/icon-profile.png`;
 export const BG_IMG_URL = "https://wallpaperaccess.com/full/6075860.jpg";
 export const TMDB_IMG_URL = "https://image.tmdb.org/t/p/w500";
 export const TMDB_TEMPIMG_URL =
@@ -421,6 +422,16 @@ export const settingsForDashboardTrailer = {
   slidesToShow: 1,
   slidesToScroll: 1,
 };
+
+export const formatLanguage = new Intl.DisplayNames(["en"], {
+  type: "language",
+});
+
+export const dateFormat = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
 
 export const TMDB_URL = "https://api.themoviedb.org/3";
 export const TMDB_API_KEY = process.env.REACT_APP_API_KEY;

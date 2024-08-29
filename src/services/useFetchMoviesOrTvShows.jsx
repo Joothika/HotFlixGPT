@@ -81,6 +81,7 @@ export const useFetchMovieOrTvInfo = (endpoint, id) => {
         );
         const infoData = await info.json();
         console.log(infoData);
+        let detailid = infoData.id;
         const {
           videos,
           images,
@@ -109,6 +110,7 @@ export const useFetchMovieOrTvInfo = (endpoint, id) => {
           homepage,
         } = infoData; // content for poster or trailer.....
         const movieContent = {
+          id: detailid,
           poster_path,
           original_title,
           release_date,
@@ -120,6 +122,7 @@ export const useFetchMovieOrTvInfo = (endpoint, id) => {
           homepage,
         };
         const tvContent = {
+          id: detailid,
           poster_path,
           original_name,
           last_air_date,

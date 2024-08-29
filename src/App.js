@@ -17,6 +17,8 @@ import {
   TrailerContainer,
   RecommendationContainer,
   ReviewContainer,
+  FavList,
+  WatchList,
 } from "./utils/ExportComponents";
 import LoginNavigation, {
   HomePageNavigation,
@@ -32,6 +34,7 @@ import LoginNavigation, {
 
 function App() {
   useUserActiveStatus();
+
   const route = createBrowserRouter([
     {
       path: "/",
@@ -126,6 +129,20 @@ function App() {
               <ProfilePage />
             </ProfilePageNavigation>
           ),
+          children: [
+            {
+              path: "/dashboard/profile",
+              element: <FavList />,
+            },
+            {
+              path: "/dashboard/profile/favourites",
+              element: <FavList />,
+            },
+            {
+              path: "/dashboard/profile/:watchlist",
+              element: <WatchList />,
+            },
+          ],
         },
       ],
     },

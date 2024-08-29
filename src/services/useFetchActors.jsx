@@ -43,6 +43,7 @@ export const useFetchActorsShow = (endpoint, id) => {
         const { images, translations, also_known_as, combined_credits } =
           actorsData;
         const {
+          id,
           name,
           birthday,
           known_for_department,
@@ -53,6 +54,7 @@ export const useFetchActorsShow = (endpoint, id) => {
           homepage,
         } = actorsData;
         const actorContent = {
+          id,
           imdb_id,
           name,
           birthday,

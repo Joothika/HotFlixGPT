@@ -17,7 +17,9 @@ const DetailMenuBar = () => {
       >
         <li>Overview</li>
       </NavLink>
-      {name === "movie" || name === "tv" ? (
+      {name === "person" ? (
+        ""
+      ) : (
         <>
           <NavLink
             to={`/dashboard/${name}/${id}/reviews`}
@@ -38,8 +40,6 @@ const DetailMenuBar = () => {
             <li>Trailers</li>
           </NavLink>
         </>
-      ) : (
-        ""
       )}
       <NavLink
         to={`/dashboard/${name}/${id}/recommendations`}

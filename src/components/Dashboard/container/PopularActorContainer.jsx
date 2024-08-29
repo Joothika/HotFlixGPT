@@ -11,7 +11,6 @@ const PopularActorContainer = () => {
   const [showButton, setShowButton] = useState(false);
   const { popularActors } = useSelector((state) => state.actorReducer);
   useFetchActors("/person/popular");
-  console.log(popularActors);
   return (
     <section
       className="text-white sm:sticky sm:z-10"

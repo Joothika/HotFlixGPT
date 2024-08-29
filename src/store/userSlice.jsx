@@ -11,6 +11,7 @@ const userSlice = createSlice({
     errorSignIn: null,
     errorSignUp: null,
     userActive: false,
+    signedInUserData: [],
   },
   reducers: {
     getUserEmail(state, action) {
@@ -34,6 +35,9 @@ const userSlice = createSlice({
     UserActiveStatus(state, action) {
       state.userActive = action.payload;
     },
+    onShowUserData(state, actions) {
+      state.signedInUserData = actions.payload;
+    },
   },
 });
 
@@ -45,6 +49,7 @@ export const {
   setErrorSignIn,
   setErrorSignUp,
   UserActiveStatus,
+  onShowUserData,
 } = userSlice.actions;
 
 export default userSlice.reducer;

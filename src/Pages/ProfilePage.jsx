@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ProfileContainer } from "../utils/ExportComponents";
 
 const ProfilePage = () => {
-  return <div className="mt-32 text-black">ProfilePage</div>;
+  return (
+    <div className="max-h-max w-screen bg-black">
+      <ProfileContainer />
+    </div>
+  );
 };
 
 export default ProfilePage;

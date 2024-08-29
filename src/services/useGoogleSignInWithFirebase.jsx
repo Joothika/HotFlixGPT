@@ -1,13 +1,8 @@
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import React, { useEffect } from "react";
 import { auth, db, provider } from "../../firebase.config";
 import { useDispatch } from "react-redux";
-import { setErrorSignIn, UserActiveStatus } from "../utils/ExportComponents";
-import {
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithPopup,
-} from "firebase/auth";
+import { setErrorSignIn } from "../utils/ExportComponents";
+import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
 const useGoogleSignInWithFirebase = () => {
   const dispatch = useDispatch();
   async function sendUserDatatoDatabase(user) {
@@ -23,7 +18,6 @@ const useGoogleSignInWithFirebase = () => {
         emailVerified,
         photo: photoURL,
       };
-
       const getData = await getDoc(database);
       if (getData.exists()) {
         await getData.data();

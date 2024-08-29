@@ -8,16 +8,13 @@ import CakeIcon from "@mui/icons-material/Cake";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import PlaceIcon from "@mui/icons-material/Place";
 import { useParams } from "react-router-dom";
+import { dateFormat } from "../../../utils/constants";
 const TrailerTags = () => {
   const { content, tvContent, actorContent } = useSelector(
     (state) => state.detailsReducer,
   );
   const { name } = useParams();
-  const dateFormatActor = new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
+
   return (
     <ul className="flex w-full items-center justify-start text-[0.8rem] text-stone-200 sm:hidden md:justify-between lg:mb-4 lg:flex lg:w-[20rem] lg:text-sm lg:text-stone-50/50 xl:w-[23rem] xl:text-lg">
       {content?.release_date === "" || tvContent?.last_air_date === "" ? (
@@ -42,7 +39,7 @@ const TrailerTags = () => {
           {name === "tv" && tvContent?.last_air_date?.split("-")[0]}
           {name === "person" &&
             actorContent?.birthday &&
-            dateFormatActor?.format(new Date(actorContent?.birthday))}
+            dateFormat?.format(new Date(actorContent?.birthday))}
         </li>
       )}
       <li className="ml-6 flex items-center justify-evenly md:ml-0">

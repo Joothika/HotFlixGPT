@@ -48,6 +48,15 @@ export { SearchBar } from "../components/Search/SearchBar";
 export { SearchAnimation } from "../components/Search/SearchAnimation";
 export { SearchResults } from "../components/Search/SearchResults";
 
+/****** PROFILE CONTAINER ******/
+export { UserInformation } from "../components/Profile/UserInformation";
+export { WatchList } from "../components/Profile/WatchList";
+export { FavList } from "../components/Profile/FavList";
+export { ProfileMenuBar } from "../components/Profile/ProfileMenuBar";
+export { ProfileMenuList } from "../components/Profile/ProfileMenuList";
+export { MenuList } from "../components/Profile/MenuList";
+export { ProfileContainer } from "../components/Profile/ProfileContainer";
+
 /****** DETAILS CONTAINER ******/
 export { default as DetailsTrailer } from "../components/Details/Trailer/DetailsTrailer";
 export { Trailer } from "../components/Details/Trailer/Trailer";
@@ -112,6 +121,7 @@ export { default as ProfilePage } from "../Pages/ProfilePage";
 export { default as DetailsPage } from "../Pages/DetailsPage";
 
 /****** ALL CUSTOM HOOKS *****/
+
 export { default as useToggleSignInForm } from "../hooks/useToggleSignInForm";
 export { default as useReferenceAndDispatchSignUp } from "../hooks/useReferenceAndDispatchSignUp";
 export { default as useValidateAuthentication } from "../hooks/useValidateAuthentication";
@@ -134,9 +144,11 @@ export { useFetchActorsShow } from "../services/useFetchActors";
 export { useFetchMovieSearch } from "../services/useFetchSearch";
 export { useFetchTvSearch } from "../services/useFetchSearch";
 export { useFetchPersonSearch } from "../services/useFetchSearch";
-export { useFetchToken } from "../services/useFetchSubscription";
+export { fetchToken } from "../services/useFetchSubscription";
+export { createSessionId } from "../services/useFetchSubscription";
 
 /****** ALL REDUX STORE *****/
+
 export { getUserEmail } from "../store/userSlice";
 export { getUserName } from "../store/userSlice";
 export { getUserPassword } from "../store/userSlice";
@@ -144,6 +156,7 @@ export { getUserPhoneNumber } from "../store/userSlice";
 export { setErrorSignIn } from "../store/userSlice";
 export { setErrorSignUp } from "../store/userSlice";
 export { UserActiveStatus } from "../store/userSlice";
+export { onShowUserData } from "../store/userSlice";
 
 export { onhoverMenu } from "../store/dashboardSlice";
 export { onTrendingAll } from "../store/dashboardSlice";
@@ -177,7 +190,6 @@ export { onDisplayPoster } from "../store/detailsDisplaySlice";
 export { onDisplayTrailerOrPosterMovieContent } from "../store/detailsDisplaySlice";
 export { onDisplayTrailerOrPosterTvContent } from "../store/detailsDisplaySlice";
 export { onDisplayActorContent } from "../store/detailsDisplaySlice";
-export { onDisplayIMDBContent } from "../store/detailsDisplaySlice";
 export { onDisplayKeywords } from "../store/detailsDisplaySlice";
 export { onDisplayGenres } from "../store/detailsDisplaySlice";
 export { onDisplayKnownNames } from "../store/detailsDisplaySlice";

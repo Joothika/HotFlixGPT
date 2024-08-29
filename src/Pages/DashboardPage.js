@@ -3,13 +3,13 @@ import { auth } from "../../firebase.config";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { UserActiveStatus } from "../store/userSlice";
-import { ContentBox, MenuBar } from "../utils/ExportComponents";
-import { useEffect } from "react";
+import { MenuBar } from "../utils/ExportComponents";
 const DashboardPage = () => {
   const navigate = useNavigate();
   const { userActive } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
+ 
   async function signOutUser() {
     await signOut(auth);
     dispatch(UserActiveStatus(false));

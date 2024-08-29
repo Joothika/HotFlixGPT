@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { UserActiveStatus } from "../utils/ExportComponents";
+import { onShowUserData, UserActiveStatus } from "../utils/ExportComponents";
 import { auth } from "../../firebase.config";
 
 const useUserActiveStatus = () => {
@@ -11,11 +11,11 @@ const useUserActiveStatus = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     async function userDataActiveStatus() {
-      console.log(userActive, "useracive");
       await onAuthStateChanged(auth, (credential) => {
         if (credential?.emailVerified) {
-          console.log("user is here");
+          console.log(auth.currentUser);
           dispatch(UserActiveStatus(true));
+          dispatch(onShowUserData(auth.currentUser));
         }
         if (!credential) {
           dispatch(UserActiveStatus(false));
