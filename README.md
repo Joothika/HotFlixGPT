@@ -13,13 +13,15 @@
 </ul>
 
 <h1>Teach Requirement</h1>
-1. UI - Tailwindcss
-2. Development - ReactJS
-3. Data Management - Redux
-4. Routing - React Router Dom
-5. Authentication - Firebase
-6. Bundler - Parcel
-7. Deployment - Netlify
+<ul>
+   <li>UI - Tailwindcss</li>
+   <li>Development - ReactJS</li>
+   <li>Data Management - Redux</li>
+   <li>Routing - React Router Dom</li>
+   <li>Authentication - Firebase</li>
+   <li>Bundler - Parcel</li>
+   <li>Deployment - Netlify</li>
+</ul>
 
 <h1>Demonstaration</h1>
 
